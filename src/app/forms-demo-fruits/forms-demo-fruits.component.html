@@ -1,0 +1,61 @@
+<form #fruitsShoppingForm="ngForm">
+    <div>
+        <mat-form-field>
+            <mat-label>Order Name:</mat-label>
+            <input matInput 
+                [(ngModel)]="orderName" 
+                name="orderName"
+                maxlength="50"
+                minlength="10"
+                required
+                #orderNameField="ngModel">
+            <mat-error *ngIf="orderNameField.invalid">
+                Order name length: 10-50
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Email:</mat-label>
+            <input matInput 
+                [(ngModel)]="email" 
+                name="email"
+                email
+                required
+                #emailField="ngModel">
+            <mat-error *ngIf="emailField.invalid">
+                Please enter valid email address
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Fruit Type:</mat-label>
+            <mat-select [(ngModel)]="selectedFruit" required name="selectedFruit">
+                <mat-option *ngFor="let fruitOption of fruitOptions"
+                    [value]="fruitOption">
+                {{fruitOption}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Fruit Amount:</mat-label>
+            <input matInput 
+                [(ngModel)]="amount" 
+                name="amount"
+                pattern="^[0-9]+$"
+                required
+                #fruitAmountField="ngModel">
+            <mat-error *ngIf="fruitAmountField.invalid">
+                Set numeric fruit amount
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <button type="submit"
+        mat-raised-button
+        color="primary">
+        Save Order
+    </button>
+</form>

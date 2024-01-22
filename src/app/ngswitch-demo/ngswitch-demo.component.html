@@ -1,0 +1,17 @@
+<div class="summary-container">
+    <div *ngFor="let fruit of fruitsMap.keys()" class="fruit-summary">
+        Fruit: {{ fruit }} Amount: {{ fruitsMap.get(fruit) }}
+        <div [ngSwitch]="fruit">
+            <p *ngSwitchCase="FruitType.Apple">
+                Nutrition Fact: Low in calories, high in fiber, and rich in vitamin C.
+            </p>
+            <p *ngSwitchCase="FruitType.Banana">
+                Nutrition Fact: Excellent source of potassium and energy.
+            </p>
+            <p *ngSwitchCase="FruitType.Orange">
+                Nutrition Fact: Packed with vitamin C and antioxidants.
+            </p>
+            <p *ngSwitchDefault>Nutrition Fact: Unknown </p>
+        </div>
+    </div>
+</div>

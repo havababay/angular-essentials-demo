@@ -1,0 +1,9 @@
+.phone-numbers-title {
+  display: flex;
+  gap: 16px;
+}
+
+.phone-numbers-form {
+  display: flex;
+  gap: 8px;
+}

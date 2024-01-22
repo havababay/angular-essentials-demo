@@ -1,0 +1,24 @@
+<h1>ngFor ngSwitch Demo</h1>
+<div class="shopping-list">
+    <ul>
+        <li *ngFor="let fruit of fruits; let i = index">
+            {{fruit}}
+            <button 
+                mat-icon-button
+                (click)="deleteFruit(i)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </li>
+    </ul>
+</div>
+<div class="add-buttons">
+    <div *ngFor="let option of fruitOptions">
+        <button 
+            color="primary"
+            mat-raised-button
+            (click)="addFruit(option)">
+            Add {{ option }}
+        </button>
+    </div>
+</div>
+<app-ngswitch-demo [fruits]="fruits"></app-ngswitch-demo>

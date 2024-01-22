@@ -1,0 +1,19 @@
+<h1>Communication Demo</h1>
+<div>
+    Title : {{ title }}
+</div>
+<div>
+    <button 
+        mat-raised-button
+        color="primary"
+        [disabled]="isVisible">
+        Disabled?
+    </button>
+</div>
+<div>
+    Is the light on?
+    <mat-radio-group (change)="onLightChanged($event.value)">
+        <mat-radio-button value="true">Yes</mat-radio-button>
+        <mat-radio-button value="false">No</mat-radio-button>
+    </mat-radio-group>
+</div>

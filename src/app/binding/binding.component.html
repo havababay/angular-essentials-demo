@@ -1,0 +1,27 @@
+<h1>Binding Demo</h1>
+<div>
+    Simple Value: {{ 2 + 5 }}
+</div>
+<div>
+    <div>Product Name: {{ productName }}</div>
+    <div>Total Price : {{ quantity * price}}</div>
+</div>
+<div>
+    Today's date is: {{ getTodayDateAsString() }}
+</div>
+<div>
+    <button 
+        mat-raised-button
+        color="primary"
+        (click)="handleButtonClick()">
+        Click me!
+    </button>
+</div>
+<div>
+    <button 
+        mat-raised-button
+        color="primary"
+        [disabled]="isDisabled">
+        Disabled?
+    </button>
+</div>
