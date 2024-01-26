@@ -10,6 +10,7 @@ import { FormsDemoFruitsComponent } from './forms-demo-fruits/forms-demo-fruits.
 import { PersonListComponent } from './person-list/person-list.component';
 import { ErrorHandlingDemoComponent } from './error-handling-demo/error-handling-demo.component';
 import { PersonFormComponent } from './person-form/person-form.component';
+import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 
 export const routes: Routes = [
     {path: 'binding', component: BindingComponent},
@@ -23,4 +24,5 @@ export const routes: Routes = [
     {path: 'persons', component: PersonListComponent},
     {path: 'fruitsform', component: FormsDemoFruitsComponent},
     {path: 'errors', component: ErrorHandlingDemoComponent},
+    {path: 'pipes', component: PipesDemoComponent},
 ];

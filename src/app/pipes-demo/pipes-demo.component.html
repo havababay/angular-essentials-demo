@@ -1,0 +1,29 @@
+<div>
+    <h3>Date Pipe</h3>
+    <div>fullDate : {{ currentDate | date:'fullDate'}}</div>
+    <div>full : {{ currentDate | date:'full'}}</div>
+    <div>short : {{ currentDate | date:'short'}}</div>
+</div>
+<div>
+    <h3>Decimal Pipe</h3>
+    <div>5 digits after decimal point : 
+        {{ pi | number:'1.0-5'}}
+    </div>
+    <div>5 digits before decimal point : 
+        {{ pi | number:'5.0-5'}}
+    </div>
+</div>
+<div>
+    <h3>Percent Pipe</h3>
+    <div>2 digits after decimal point : 
+        {{ completion | percent:'1.0-2'}}
+    </div>
+    <div>2 digits before decimal point : 
+        {{ completion | percent:'2.0-2'}}
+    </div>
+</div>
+<div>
+    <h3>UpperCase Pipe</h3>
+    <div>{{ message | uppercase }}
+    </div>
+</div>
