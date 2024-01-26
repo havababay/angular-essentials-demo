@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { DeletePersonDialogComponent } from '../delete-person-dialog/delete-person-dialog.component';
+import { PersonMultipleKeysService } from '../services/personMultipleKeys.service';
 
 @Component({
   selector: 'app-person-list',
@@ -23,7 +24,7 @@ export class PersonListComponent implements OnInit{
   displayedColumns: string[] =
     ['fullName','email', 'actions'];
 
-  constructor(private personService : PersonService, private dialog: MatDialog) {
+  constructor(private personService : PersonMultipleKeysService, private dialog: MatDialog) {
 
   }
   ngOnInit(): void {

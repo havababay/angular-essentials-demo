@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { PhoneNumber } from '../../shared/model/phone-number';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
+import { PersonMultipleKeysService } from '../services/personMultipleKeys.service';
 
 @Component({
   selector: 'app-person-form',
@@ -25,7 +26,7 @@ import { MatSelectModule } from '@angular/material/select';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PersonFormComponent { 
-  constructor(private personService : PersonService,
+  constructor(private personService : PersonMultipleKeysService,
     private routerService : Router) {
 
   }
