@@ -6,6 +6,9 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { Person } from '../../shared/model/person';
+import { PersonMultipleKeysService } from '../services/personMultipleKeys.service';
+import { PersonService } from '../services/person.service';
 
 @Component({
   selector: 'app-error-handling-demo',
@@ -23,20 +26,19 @@ import { MatIconModule } from '@angular/material/icon';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ErrorHandlingDemoComponent { 
-  constructor(private errorHandlingService : ErrorHandlingService) {}
+  constructor(private personService : PersonService) {}
 
-  fruitIndex? : number;
-  fruitName = "";
-  isFruitNameLoaded = true;
+  personIndex? : number;
+  currentPerson? : Person;
+  isPersonNameLoaded = true;
 
-  setFruitNameByIndex() {
-    try 
-    {
-      this.fruitName = this.errorHandlingService.
-        getFruitName(this.fruitIndex!);
-      this.isFruitNameLoaded = true;
+  getPersonDataByIndex() {
+    try {
+      this.currentPerson = 
+        this.personService.get(this.personIndex!);
+      this.isPersonNameLoaded = true;
     } catch(error) {
-      this.isFruitNameLoaded = false;
+      this.isPersonNameLoaded = false;
     }
   }
 }

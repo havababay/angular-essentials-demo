@@ -1,18 +1,18 @@
 <div>
     <mat-form-field>
-        <mat-label>Fruit Index</mat-label>
-        <input matInput [(ngModel)]="fruitIndex">
+        <mat-label>Person Index</mat-label>
+        <input matInput [(ngModel)]="personIndex">
     </mat-form-field>
     <button
         mat-icon-button
-        [disabled]="!fruitIndex"
-        (click)="setFruitNameByIndex()">
+        [disabled]="!personIndex"
+        (click)="getPersonDataByIndex()">
         <mat-icon>search</mat-icon>
     </button>
 </div>
-<div *ngIf="isFruitNameLoaded && fruitName != ''">
-    Fruit name: {{ fruitName }}
+<div *ngIf="isPersonNameLoaded && currentPerson">
+    Full name: {{ currentPerson.fullName() }}
 </div>
-<div *ngIf="!isFruitNameLoaded">
-    Failed to load fruit name for current index.
+<div *ngIf="!isPersonNameLoaded">
+    Failed to load person data for current index.
 </div>
